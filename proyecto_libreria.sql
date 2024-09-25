@@ -23,3 +23,16 @@ CREATE TABLE "editorial" (
 	PRIMARY KEY("ID_editorial" AUTOINCREMENT),
 	FOREIGN KEY("ID_libro") REFERENCES "libro"("ID_libro")
 );
+CREATE TABLE "usuario" (
+	"ID_usuario"	INTEGER NOT NULL UNIQUE,
+	"nombre"	TEXT NOT NULL,
+	"email"	TEXT NOT NULL UNIQUE,
+	"telefono"	INTEGER UNIQUE,
+	PRIMARY KEY("ID_usuario" AUTOINCREMENT)
+);
+CREATE TABLE "venta" (
+	"ID_venta"	INTEGER NOT NULL UNIQUE,
+	"fecha"	TEXT NOT NULL,
+	"valor_libro"	INTEGER NOT NULL,
+	PRIMARY KEY("ID_venta" AUTOINCREMENT)
+);
